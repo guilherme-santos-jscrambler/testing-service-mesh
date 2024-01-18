@@ -1,0 +1,13 @@
+apiVersion: projectcalico.org/v3
+kind: NetworkPolicy
+metadata:
+  name: deny-traffic-ingress-from-other-namespaces
+  namespace: istio-system
+spec:
+  types:
+  - Ingress
+  - Egress  
+  ingress:
+    - action: Allow
+  egress:
+    - action: Allow
